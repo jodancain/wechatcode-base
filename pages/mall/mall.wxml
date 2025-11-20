@@ -1,0 +1,61 @@
+<!--pages/mall/mall.wxml-->
+<view class="page-mall">
+  <!-- Filters -->
+  <view class="filters-container">
+    <view class="filter-row">
+      <view 
+        wx:for="{{filters1}}" 
+        wx:key="key" 
+        class="filter-item main-filter {{item.active ? 'active' : ''}}"
+        bindtap="handleFilterTap">
+        {{item.text}}
+      </view>
+    </view>
+    <view class="filter-row">
+      <view 
+        wx:for="{{filters2}}" 
+        wx:key="key" 
+        class="filter-item secondary-filter"
+        bindtap="handleFilterTap">
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+
+  <!-- Promo Banners -->
+  <view class="promo-banners">
+    <view class="promo-banner">点击筛选 11.11 活动商品</view>
+    <view class="promo-banner">筛选每满300减50商品</view>
+  </view>
+
+  <!-- Product List -->
+  <view class="product-list">
+    <view class="product-card" wx:for="{{products}}" wx:key="id" bindtap="handleProductTap">
+      <image class="product-image" src="{{item.image}}" mode="aspectFit"></image>
+      <view class="product-details">
+        <view class="product-title-row">
+          <text class="tag-store">11.11</text>
+          <text class="product-title">{{item.title}}</text>
+        </view>
+        <view class="product-description">{{item.description}}</view>
+        <view class="product-price">
+          <text class="price-symbol">¥</text>
+          <text class="price-value">{{item.price}}</text>
+          <text class="price-original">到手价 ¥{{item.originalPrice}}</text>
+        </view>
+        <view class="product-tags">
+          <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item.tag}}</text>
+        </view>
+        <view class="product-stats">
+          <text>已售{{item.sales}}</text>
+          <text class="stats-divider">|</text>
+          <text>{{item.rating}}好评</text>
+        </view>
+        <view class="product-store">
+          {{item.store}}
+          <text class="store-arrow">></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

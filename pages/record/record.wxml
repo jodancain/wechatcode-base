@@ -1,0 +1,23 @@
+<!--pages/record/record.wxml-->
+<view class="container">
+  <view class="form-group">
+    <text class="label">血尿酸 (μmol/L)</text>
+    <input class="input" type="digit" value="{{uricAcid}}" bindinput="onUricAcidInput" placeholder="" />
+  </view>
+
+  <view class="form-group">
+    <text class="label">饮食记录</text>
+    <view class="traffic-light-selector">
+      <button class="traffic-btn green {{dietLight === 'green' ? 'selected' : ''}}" bindtap="selectDiet" data-light="green">健康</button>
+      <button class="traffic-btn yellow {{dietLight === 'yellow' ? 'selected' : ''}}" bindtap="selectDiet" data-light="yellow">一般</button>
+      <button class="traffic-btn red {{dietLight === 'red' ? 'selected' : ''}}" bindtap="selectDiet" data-light="red">危险</button>
+    </view>
+  </view>
+
+  <view class="form-group">
+    <text class="label">饮食描述</text>
+    <textarea class="textarea" value="{{dietDescription}}" bindinput="onDescriptionInput" placeholder="可以简单描述一下吃了什么，比如“海鲜火锅”"></textarea>
+  </view>
+
+  <button class="submit-btn" type="primary" bindtap="submitRecord">提交记录</button>
+</view>

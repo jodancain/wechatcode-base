@@ -1,0 +1,32 @@
+<!--pages/video/video.wxml-->
+<view class="page-video">
+  <!-- Category Tabs -->
+  <scroll-view class="category-tabs" scroll-x="true" enable-flex="true">
+    <view 
+      wx:for="{{categories}}" 
+      wx:key="id" 
+      class="tab-item {{item.active ? 'active' : ''}}"
+      bindtap="handleCategoryTap">
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <!-- Main Content -->
+  <view class="video-content">
+    <view class="section-header">
+      <image class="section-icon" src="https://img.icons8.com/fluency/96/youtube-play.png"></image>
+      <text class="section-title">精彩视频</text>
+    </view>
+
+    <!-- Video Grid -->
+    <view class="video-grid">
+      <view class="video-card" wx:for="{{videos}}" wx:key="id" bindtap="handleVideoTap">
+        <image class="video-thumbnail" src="{{item.thumbnail}}" mode="aspectFill"></image>
+        <view class="video-info">
+          <text class="video-title">{{item.title}}</text>
+          <text class="video-doctor">主讲医生: {{item.doctor}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

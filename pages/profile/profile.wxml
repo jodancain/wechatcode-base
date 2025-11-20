@@ -1,0 +1,71 @@
+<!--pages/profile/profile.wxml-->
+<view class="page-profile">
+  <!-- User Info Header -->
+  <view class="profile-header">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <view class="user-info">
+      <view class="user-name">{{userInfo.nickName}}</view>
+      <view class="user-id">ID: {{userInfo.id}}</view>
+    </view>
+    <view class="header-actions">
+      <!-- Placeholder for ... and eye icons -->
+      <image class="action-icon" src="https://img.icons8.com/ios-glyphs/90/more.png" />
+      <image class="action-icon" src="https://img.icons8.com/ios-glyphs/90/visible.png" />
+    </view>
+  </view>
+
+  <!-- Personal Profile Card -->
+  <view class="profile-card">
+    <view class="card-title">个人档案</view>
+    <view class="grid-container grid-3">
+      <view class="grid-item" wx:for="{{personalProfile}}" wx:key="text" bindtap="handleNavigate">
+        <image class="grid-icon" src="{{item.icon}}"></image>
+        <text class="grid-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Common Tools Card -->
+  <view class="profile-card">
+    <view class="card-title">常用</view>
+    <view class="grid-container grid-4">
+      <view class="grid-item" wx:for="{{commonTools}}" wx:key="text" bindtap="handleNavigate">
+        <image class="grid-icon" src="{{item.icon}}"></image>
+        <text class="grid-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Service Packages Card -->
+  <view class="profile-card">
+    <view class="card-title">服务包</view>
+    <view class="service-container">
+      <view class="service-item points" bindtap="handleNavigate">
+        <view class="points-info">
+          <text class="points-count">{{servicePackages.points}}</text>
+          <text class="points-label">我的积分</text>
+        </view>
+        <image class="service-icon" src="{{servicePackages.pointsIcon}}"></image>
+      </view>
+      <view class="service-item mall" bindtap="handleNavigate">
+        <view class="mall-info">
+          <text class="mall-title">积分商城</text>
+          <text class="mall-label">{{servicePackages.mallText}}</text>
+        </view>
+        <image class="service-icon" src="{{servicePackages.mallIcon}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- Other Options Card -->
+  <view class="profile-card">
+    <view class="card-title">其他</view>
+    <view class="list-container">
+      <view class="list-item" wx:for="{{otherOptions}}" wx:key="text" bindtap="handleNavigate">
+        <image class="list-icon" src="{{item.icon}}"></image>
+        <text class="list-text">{{item.text}}</text>
+        <image class="list-arrow" src="https://img.icons8.com/ios-glyphs/90/chevron-right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

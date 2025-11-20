@@ -1,0 +1,7 @@
+<!--pages/dashboard/dashboard.wxml-->
+<view class="container">
+  <view class="chart-title">血尿酸历史趋势</view>
+  <view class="chart-container">
+    <ec-canvas id="uric-acid-chart" canvas-id="uric-acid-canvas" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

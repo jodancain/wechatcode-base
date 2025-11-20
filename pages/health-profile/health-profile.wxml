@@ -1,0 +1,46 @@
+<!-- pages/health-profile/health-profile.wxml -->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="card">
+      <view class="form-group">
+        <text class="label">姓名</text>
+        <input name="name" class="input" placeholder="请输入真实姓名" value="{{profile.name}}" />
+      </view>
+      <view class="form-group">
+        <text class="label">性别</text>
+        <picker name="gender" bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genderArray}}">
+          <view class="picker">
+            {{genderArray[genderIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class="form-group">
+        <text class="label">出生日期</text>
+        <picker name="dob" mode="date" value="{{profile.dob}}" start="1920-01-01" end="2024-01-01" bindchange="bindDobChange">
+          <view class="picker">
+            {{profile.dob || '请选择出生日期'}}
+          </view>
+        </picker>
+      </view>
+      <view class="form-group">
+        <text class="label">身高 (cm)</text>
+        <input name="height" class="input" type="number" placeholder="请输入身高" value="{{profile.height}}" />
+      </view>
+      <view class="form-group">
+        <text class="label">体重 (kg)</text>
+        <input name="weight" class="input" type="number" placeholder="请输入体重" value="{{profile.weight}}" />
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="card-title">基础疾病史</view>
+      <checkbox-group name="conditions" class="checkbox-group" bindchange="bindConditionsChange">
+        <label class="checkbox" wx:for="{{conditions}}" wx:key="value">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <button class="submit-btn" form-type="submit">保存</button>
+  </form>
+</view>

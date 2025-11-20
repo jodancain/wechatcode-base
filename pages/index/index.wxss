@@ -1,0 +1,149 @@
+/* pages/index/index.wxss */
+.container {
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+/* Action Grid */
+.action-grid {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 10rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+}
+
+.grid-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.grid-item:nth-child(n+5) {
+  margin-bottom: 0;
+}
+
+
+.grid-icon {
+  width: 90rpx;
+  height: 90rpx;
+  margin-bottom: 10rpx;
+}
+
+.grid-text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+/* Health Knowledge Section */
+.health-knowledge {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+
+.knowledge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.knowledge-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.search-icon {
+  width: 40rpx;
+  height: 40rpx;
+  opacity: 0.5;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.tab-item {
+  font-size: 30rpx;
+  color: #666;
+  margin-right: 40rpx;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #333;
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 6rpx;
+  background-color: #4a90e2;
+  border-radius: 3rpx;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.article-info {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.article-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+}
+
+.view-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+  opacity: 0.5;
+}
+
+.article-image {
+  width: 180rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  background-color: #f0f0f0;
+}

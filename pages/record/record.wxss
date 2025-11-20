@@ -1,0 +1,87 @@
+/* pages/record/record.wxss */
+.container {
+  display: block; /* Override app.wxss flexbox styles */
+  padding: 40rpx 30rpx;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.form-group {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.label {
+  display: block;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 25rpx;
+  color: #333;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 20rpx;
+  border: 1px solid #e0e0e0;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  background-color: #f9f9f9;
+  /* Add explicit text alignment properties to try and fix simulator bug */
+  text-align: left;
+  line-height: normal;
+}
+
+.textarea {
+  height: 180rpx;
+}
+
+/* Clear default button styles */
+button::after {
+  border: none;
+}
+
+.traffic-light-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx; /* Add gap between buttons */
+}
+
+.traffic-btn {
+  flex: 1; /* Make buttons share space equally */
+  color: white;
+  border: 4rpx solid transparent; /* for selected state */
+  border-radius: 12rpx;
+  padding: 15rpx 0;
+  font-size: 30rpx;
+  transition: all 0.2s ease-in-out;
+  line-height: 1.5; /* Ensure text is vertically centered */
+}
+.traffic-btn.green { background-color: #2ECC71; }
+.traffic-btn.yellow { background-color: #F1C40F; }
+.traffic-btn.red { background-color: #E74C3C; }
+
+.traffic-btn.selected {
+  border-color: #007aff; /* Use a distinct selection color */
+  transform: translateY(-4rpx);
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn {
+  margin-top: 50rpx;
+  background-color: #007aff;
+  color: white;
+  border-radius: 16rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  padding: 20rpx 0;
+}
+
+/* Add a hover class for button feedback */
+.submit-btn:active {
+  background-color: #0056b3;
+}

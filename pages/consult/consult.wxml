@@ -1,0 +1,32 @@
+<!--pages/consult/consult.wxml-->
+<view class="page-consult">
+  <!-- Search Bar -->
+  <view class="search-bar">
+    <image class="search-icon" src="https://img.icons8.com/ios-glyphs/90/search--v1.png"></image>
+    <input class="search-input" placeholder="输入医生姓名" />
+  </view>
+
+  <!-- Doctor List -->
+  <view class="doctor-list">
+    <view class="doctor-card" wx:for="{{doctors}}" wx:key="id">
+      <image class="doctor-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+      <view class="doctor-info">
+        <view class="info-header">
+          <text class="doctor-name">{{item.name}}</text>
+          <text class="doctor-title" wx:if="{{item.title}}">{{item.title}}</text>
+        </view>
+        <view class="doctor-hospital">{{item.hospital}}</view>
+        <view class="doctor-stats">
+          <text>咨询量{{item.consultationCount}}</text>
+          <text class="divider">|</text>
+          <text>好评率{{item.rating}}%</text>
+        </view>
+        <view class="doctor-intro">{{item.intro}}</view>
+        <view class="doctor-services">
+          已开通: {{item.services.join(' | ')}}
+        </view>
+      </view>
+      <button class="consult-button" bindtap="goToConsultation" data-id="{{item.id}}">去咨询</button>
+    </view>
+  </view>
+</view>

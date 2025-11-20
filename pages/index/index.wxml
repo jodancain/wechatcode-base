@@ -1,0 +1,41 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- Action Grid -->
+  <view class="action-grid">
+    <view class="grid-item" wx:for="{{actionGrid}}" wx:key="text" bindtap="handleActionTap">
+      <image class="grid-icon" src="{{item.icon}}"></image>
+      <text class="grid-text">{{item.text}}</text>
+    </view>
+  </view>
+
+  <!-- Health Knowledge Section -->
+  <view class="health-knowledge">
+    <view class="knowledge-header">
+      <text class="knowledge-title">健康知识</text>
+      <image class="search-icon" src="https://img.icons8.com/ios-glyphs/90/search--v1.png"></image>
+    </view>
+
+    <view class="tabs">
+      <view class="tab-item active" bindtap="handleTabSwitch">疾病介绍</view>
+      <view class="tab-item" bindtap="handleTabSwitch">化验检查</view>
+      <view class="tab-item" bindtap="handleTabSwitch">治疗用药</view>
+      <view class="tab-item" bindtap="handleTabSwitch">饮食保健</view>
+    </view>
+
+    <view class="article-list">
+      <view class="article-card" wx:for="{{articles['disease-intro']}}" wx:key="id" bindtap="handleArticleTap">
+        <view class="article-info">
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-meta">
+            <text>{{item.source}}</text>
+            <view class="views">
+              <image class="view-icon" src="https://img.icons8.com/ios-glyphs/90/visible.png"></image>
+              <text>{{item.views}}</text>
+            </view>
+          </view>
+        </view>
+        <image class="article-image" src="{{item.image}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>
